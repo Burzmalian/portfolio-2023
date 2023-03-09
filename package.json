@@ -1,0 +1,32 @@
+{
+  "name": "portfolio-2023",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "type-check": "turbo run type-check",
+    "test": "turbo run test",
+    "test:watch": "turbo run test:watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "eslint-config-custom": "workspace:*",
+    "postcss": "^8.4.21",
+    "prettier": "latest",
+    "prettier-plugin-tailwindcss": "^0.2.4",
+    "tailwindcss": "^3.2.7",
+    "turbo": "latest",
+    "vitest": "^0.29.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "packageManager": "pnpm@7.26.2"
+}
