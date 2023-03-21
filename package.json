@@ -1,32 +1,38 @@
 {
-  "name": "portfolio-2023",
-  "version": "0.0.0",
+  "name": "port",
+  "version": "0.1.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "type-check": "turbo run type-check",
-    "test": "turbo run test",
-    "test:watch": "turbo run test:watch"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "dependencies": {
+    "@types/node": "18.15.5",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.36.0",
+    "eslint-config-next": "13.2.4",
+    "next": "13.2.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.0.2"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.13",
-    "eslint-config-custom": "workspace:*",
+    "@storybook/addon-essentials": "7.0.0-rc.5",
+    "@storybook/addon-interactions": "7.0.0-rc.5",
+    "@storybook/addon-links": "7.0.0-rc.5",
+    "@storybook/blocks": "7.0.0-rc.5",
+    "@storybook/nextjs": "7.0.0-rc.5",
+    "@storybook/react": "7.0.0-rc.5",
+    "@storybook/testing-library": "0.0.14-next.1",
+    "autoprefixer": "^10.4.14",
+    "eslint-plugin-storybook": "^0.6.11",
     "postcss": "^8.4.21",
-    "prettier": "latest",
-    "prettier-plugin-tailwindcss": "^0.2.4",
-    "tailwindcss": "^3.2.7",
-    "turbo": "latest",
-    "vitest": "^0.29.2"
-  },
-  "engines": {
-    "node": ">=14.0.0"
-  },
-  "packageManager": "pnpm@7.26.2"
+    "storybook": "7.0.0-rc.5",
+    "tailwindcss": "^3.2.7"
+  }
 }
