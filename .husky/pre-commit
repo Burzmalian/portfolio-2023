@@ -4,3 +4,4 @@
 pnpm run lint
 pnpm run format
 pnpm run typecheck
+pnpm run test:ci
