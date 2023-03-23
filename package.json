@@ -13,7 +13,7 @@
     "format-fix": "prettier --write .",
     "format": "prettier --check .",
     "prepare": "husky install",
-    "typecheck": "tsc . --noEmit"
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@types/node": "18.15.5",
