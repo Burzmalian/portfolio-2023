@@ -6,4 +6,5 @@ build-storybook.log
 .vscode
 __tests__
 tsconfig.json
-
+storybook-static
+README.md
