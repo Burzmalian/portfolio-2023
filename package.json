@@ -11,7 +11,7 @@
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=f3b497e09a27",
     "format-fix": "prettier --write .",
-    "format": "prettier .",
+    "format": "prettier --check .",
     "prepare": "husky install"
   },
   "dependencies": {

@@ -1,2 +1,7 @@
 .next
 node_modules
+.husky
+pnpm-lock.yaml
+build-storybook.log
+.vscode
+
