@@ -3,3 +3,4 @@
 
 pnpm run lint
 pnpm run format
+pnpm run tsc

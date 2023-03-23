@@ -12,7 +12,8 @@
     "chromatic": "npx chromatic --project-token=f3b497e09a27",
     "format-fix": "prettier --write .",
     "format": "prettier --check .",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "typecheck": "tsc . --noEmit"
   },
   "dependencies": {
     "@types/node": "18.15.5",
