@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button renders a button 1`] = `
+<div
+  class="bg-slate-400 text-xl text-[red]"
+  data-testid="button"
+>
+  Button
+</div>
+`;
