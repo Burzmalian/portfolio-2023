@@ -1,3 +1,5 @@
+![example event parameter](https://github.com/Burzmalian/portfolio-2023/actions/workflows/push.yml/badge.svg?event=push)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
