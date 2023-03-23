@@ -10,7 +10,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "chromatic": "npx chromatic --project-token=f3b497e09a27",
-    "format": "prettier --write .",
+    "format-fix": "prettier --write .",
+    "format": "prettier .",
     "prepare": "husky install"
   },
   "dependencies": {
