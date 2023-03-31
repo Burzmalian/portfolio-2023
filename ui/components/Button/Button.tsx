@@ -1,7 +1,3 @@
-const Button = () => (
-  <div data-testid="button" className="bg-slate-400 text-xl text-[red]">
-    Button
-  </div>
-);
+const Button = () => <button data-testid="button">Button</button>;
 
 export default Button;
