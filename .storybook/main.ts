@@ -15,5 +15,20 @@ const config: StorybookConfig = {
   docs: {
     autodocs: "tag",
   },
+  previewHead: (head) => `
+    ${head}
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <style>
+      #storybook-root {
+        height: 100%;
+      }
+      :root {
+        --font-inter: 'Inter', sans-serif
+      }
+      body {
+        font-family: var(--font-inter);
+      }
+    </style>
+  `,
 };
 export default config;

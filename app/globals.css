@@ -39,6 +39,8 @@
 
   html,
   body {
+    font-family: var(--font-inter);
+    font-weight: 400;
     height: 100%;
   }
 }

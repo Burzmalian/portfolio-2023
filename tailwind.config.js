@@ -14,6 +14,9 @@ module.exports = {
         "bg-3": "var(--bg-3)",
         "border-1": "var(--border-1)",
       },
+      fontFamily: {
+        sans: ["var(--font-inter)"],
+      },
     },
   },
   plugins: [],
