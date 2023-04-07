@@ -1,9 +1,9 @@
-import { Button } from "@/ui/components/Button";
+import { Button } from "@/ui/components/Actions/Button";
 
 export default function Home() {
   return (
     <main>
-      <Button />
+      <Button data-testid="button">GYOYOY</Button>
     </main>
   );
 }

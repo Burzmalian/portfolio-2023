@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-before-interactive-script-outside-document */
 import Script from "next/script";
 import "./globals.css";
-import { ThemeProvider } from "@/ui/components";
+import { Header, Layout, LayoutParts, ThemeProvider } from "@/ui/components";
 import { Inter } from "next/font/google";
 
 const inter = Inter({
@@ -46,7 +46,22 @@ export default function RootLayout({
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{ __html: themeInline }}
         />
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <Layout>
+            <Layout.Part className="bg-bg-2" type={LayoutParts.Footer}>
+              <Layout.Container>Footer</Layout.Container>
+            </Layout.Part>
+            <Layout.Part className="bg-bg-3" type={LayoutParts.Middle}>
+              <Layout.Container>
+                <Layout.Part className="" type={LayoutParts.Main}>
+                  {children}
+                </Layout.Part>
+              </Layout.Container>
+            </Layout.Part>
+
+            <Header />
+          </Layout>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 // Button.stories.tsx
 import * as React from "react";
 import { Themes, useTheme } from "./Theme";
-import { Button } from "../Button";
+import { Button } from "../Actions/Button";
 
 export default {
   title: "components/Theme",
