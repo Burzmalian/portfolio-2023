@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, ButtonHTMLAttributes, HTMLAttributes } from "react";
 
 export enum ActionVariants {
   primary = "primary",
@@ -19,8 +19,11 @@ export type ActionSharedTypes = {
 };
 
 export type ButtonTypes = {
-  type?: "button" | "submit" | "reset";
+  type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
 } & ActionSharedTypes &
-  React.HTMLAttributes<HTMLButtonElement>;
+  HTMLAttributes<HTMLButtonElement>;
 
-export type LinkTypes = ActionSharedTypes & HTMLAnchorElement;
+export type LinkTypes = {
+  href: string;
+} & ActionSharedTypes &
+  HTMLAttributes<HTMLAnchorElement>;

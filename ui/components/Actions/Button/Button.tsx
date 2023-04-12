@@ -1,39 +1,42 @@
-import { ActionSizes, ActionVariants, ButtonTypes } from "../actions.types";
 import cx from "classnames";
 
-const Button = ({
-  children,
-  "data-testid": dataTestid,
-  variant = ActionVariants.secondary,
-  size = ActionSizes.lg,
-  type = "button",
-  ...rest
-}: ButtonTypes) => {
-  const variantClasses = {
-    primary: "bg-bg-3",
-    secondary: "bg-bg-2 border border-[red]",
-  };
+import { baseClasses, sizeClasses, variantClasses } from "../actions.consts";
+import { ActionSizes, ActionVariants, ButtonTypes } from "../actions.types";
+import { forwardRef } from "react";
 
-  const sizeClasses = {
-    sm: "px-6 py-2 text-sm",
-    md: "px-8 py-3 text-md",
-    lg: "px-10 py-4 text-lg",
-  };
+const Button = forwardRef<HTMLButtonElement, ButtonTypes>(
+  (
+    {
+      children,
+      className,
+      "data-testid": dataTestId,
+      variant = ActionVariants.secondary,
+      size = ActionSizes.lg,
+      type = "button",
+      ...rest
+    },
+    ref
+  ) => {
+    return (
+      <button
+        ref={ref}
+        type={type}
+        data-testid={dataTestId}
+        className={cx(
+          baseClasses,
+          variantClasses[variant],
+          sizeClasses[size],
+          className
+        )}
+        {...rest}
+      >
+        {children}
+      </button>
+    );
+  }
+);
 
-  return (
-    <button
-      type={type}
-      data-testid={dataTestid}
-      className={cx(
-        "flex items-center gap-2 rounded-full",
-        variantClasses[variant],
-        sizeClasses[size]
-      )}
-      {...rest}
-    >
-      {children}
-    </button>
-  );
-};
-
+Button.displayName = "Button";
 export default Button;
+
+// fill out stories
