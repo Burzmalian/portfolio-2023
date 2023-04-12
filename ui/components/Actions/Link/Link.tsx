@@ -1,8 +1,9 @@
 import cx from "classnames";
+import { forwardRef } from "react";
+import NextLink from "next/link";
 
 import { baseClasses, variantClasses, sizeClasses } from "../actions.consts";
 import { ActionSizes, ActionVariants, LinkTypes } from "../actions.types";
-import { forwardRef } from "react";
 
 const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
   (
@@ -18,7 +19,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
     ref
   ) => {
     return (
-      <a
+      <NextLink
         ref={ref}
         href={href}
         data-testid={dataTestId}
@@ -31,7 +32,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
         {...rest}
       >
         {children}
-      </a>
+      </NextLink>
     );
   }
 );

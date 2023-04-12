@@ -1,6 +1,6 @@
 export const variantClasses = {
-  primary: "bg-bg-3",
-  secondary: "bg-bg-2 border border-[red]",
+  primary: "bg-bg-2 border-bg-2",
+  secondary: "bg-white border-border-1 text-black",
 };
 
 export const sizeClasses = {
@@ -9,4 +9,5 @@ export const sizeClasses = {
   lg: "px-10 py-4 text-lg",
 };
 
-export const baseClasses = "flex items-center gap-2 rounded-full";
+export const baseClasses =
+  "flex border items-center justify-center gap-2 rounded-full";

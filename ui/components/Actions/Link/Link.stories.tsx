@@ -7,4 +7,8 @@ export default {
   component: Link,
 } as Meta<typeof Link>;
 
-export const Default = () => <Link href="/">Link</Link>;
+export const Default = () => (
+  <div className="flex">
+    <Link href="/">Link</Link>
+  </div>
+);
