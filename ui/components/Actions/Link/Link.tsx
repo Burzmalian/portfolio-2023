@@ -1,5 +1,5 @@
 import cx from "classnames";
-import { forwardRef, useCallback } from "react";
+import { forwardRef } from "react";
 import NextLink from "next/link";
 
 import { baseClasses, variantClasses, sizeClasses } from "../actions.consts";
@@ -20,43 +20,22 @@ const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
   ) => {
     const isAbsolute = href.indexOf("://") > 0 || href.indexOf("//") === 0;
 
-    const Anchor = useCallback(() => {
-      return (
-        <a
-          ref={isAbsolute ? ref : undefined}
-          href={href}
-          data-testid={dataTestId}
-          className={cx(
-            baseClasses,
-            variantClasses[variant],
-            sizeClasses[size],
-            className
-          )}
-          {...rest}
-        >
-          {children}
-        </a>
-      );
-    }, [
-      children,
-      className,
-      dataTestId,
-      href,
-      isAbsolute,
+    const sharedProps = {
       ref,
-      rest,
-      size,
-      variant,
-    ]);
+      href,
+      "data-testid": dataTestId,
+      className: cx(
+        baseClasses,
+        variantClasses[variant],
+        sizeClasses[size],
+        className
+      ),
+      ...{ ...rest },
+    };
 
-    if (!isAbsolute)
-      return (
-        <NextLink ref={ref} href={href} passHref legacyBehavior>
-          <Anchor />
-        </NextLink>
-      );
+    if (!isAbsolute) return <NextLink {...sharedProps}>{children}</NextLink>;
 
-    return <Anchor />;
+    return <a {...sharedProps}>{children}</a>;
   }
 );
 
