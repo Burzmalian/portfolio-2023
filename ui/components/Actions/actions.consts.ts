@@ -11,3 +11,5 @@ export const sizeClasses = {
 
 export const baseClasses =
   "flex border items-center justify-center gap-2 rounded-full";
+
+// hovers, disabled, icon sizes

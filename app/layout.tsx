@@ -16,7 +16,7 @@ export const metadata = {
 };
 
 const themeInline = `
-const LOCAL_KEYG = "gf-theme";
+const LOCAL_KEY = "gf-theme";
 const COLOR_SCHEME_QUERY = "(prefers-color-scheme: light)";
 const Themes = {
   light: 'light',
@@ -24,13 +24,12 @@ const Themes = {
 }
 const prefersLight = window.matchMedia(COLOR_SCHEME_QUERY).matches;
 const initialTheme = () => {
-  const getLocalStorage = (window.localStorage.getItem(LOCAL_KEYG)) || "";
+  const getLocalStorage = (window.localStorage.getItem(LOCAL_KEY)) || "";
   if (getLocalStorage) return getLocalStorage;
   if (prefersLight) return Themes.light;
   return Themes.dark;
 };
 document.body.classList.add(initialTheme());
-console.log("inline theme script");
 `;
 
 export default function RootLayout({
@@ -40,7 +39,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable}`}>
+      <body className={`${inter.variable} dark`}>
         <Script
           id="theme"
           strategy="beforeInteractive"
@@ -48,9 +47,7 @@ export default function RootLayout({
         />
         <ThemeProvider>
           <Layout>
-            <Layout.Part className="bg-bg-2" type={LayoutParts.Footer}>
-              <Layout.Container>Footer</Layout.Container>
-            </Layout.Part>
+            <Header />
             <Layout.Part className="bg-bg-3" type={LayoutParts.Middle}>
               <Layout.Container>
                 <Layout.Part className="" type={LayoutParts.Main}>
@@ -58,8 +55,9 @@ export default function RootLayout({
                 </Layout.Part>
               </Layout.Container>
             </Layout.Part>
-
-            <Header />
+            <Layout.Part className="bg-bg-2" type={LayoutParts.Footer}>
+              <Layout.Container>Footer</Layout.Container>
+            </Layout.Part>
           </Layout>
         </ThemeProvider>
       </body>

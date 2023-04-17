@@ -37,7 +37,7 @@ const LayoutPart = ({ as, children, type, className }: LayoutPartProps) => {
     },
     [Main]: {
       element: "main",
-      classes: "grow",
+      classes: "grow flex",
     },
     [Footer]: {
       element: "footer",

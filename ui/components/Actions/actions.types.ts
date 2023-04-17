@@ -20,6 +20,7 @@ export type ActionSharedTypes = {
 
 export type ButtonTypes = {
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];
+  onClick: () => void;
 } & ActionSharedTypes &
   HTMLAttributes<HTMLButtonElement>;
 

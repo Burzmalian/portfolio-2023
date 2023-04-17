@@ -1,3 +1,5 @@
+"use client";
+
 import cx from "classnames";
 
 import { baseClasses, sizeClasses, variantClasses } from "../actions.consts";
@@ -13,6 +15,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonTypes>(
       variant = ActionVariants.secondary,
       size = ActionSizes.lg,
       type = "button",
+      onClick,
       ...rest
     },
     ref
@@ -28,6 +31,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonTypes>(
           sizeClasses[size],
           className
         )}
+        onClick={onClick}
         {...rest}
       >
         {children}
