@@ -23,7 +23,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
     const Anchor = useCallback(() => {
       return (
         <a
-          ref={ref}
+          ref={isAbsolute ? ref : undefined}
           href={href}
           data-testid={dataTestId}
           className={cx(
@@ -37,11 +37,21 @@ const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
           {children}
         </a>
       );
-    }, [children, className, dataTestId, href, ref, rest, size, variant]);
+    }, [
+      children,
+      className,
+      dataTestId,
+      href,
+      isAbsolute,
+      ref,
+      rest,
+      size,
+      variant,
+    ]);
 
     if (!isAbsolute)
       return (
-        <NextLink href={href} passHref legacyBehavior>
+        <NextLink ref={ref} href={href} passHref legacyBehavior>
           <Anchor />
         </NextLink>
       );
