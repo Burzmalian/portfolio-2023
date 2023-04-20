@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Link } from ".";
 import { ActionVariants, ActionSizes } from "../actions.types";
+import { Button } from "../..";
 
 export default {
   component: Link,
@@ -20,8 +21,12 @@ type Story = StoryObj<typeof Link>;
 
 export const Primary: Story = {
   render: (args) => (
-    <div className="flex">
-      <Link {...args} />
+    <div className="flex gap-3">
+      <Link {...args} aria-label="asdf" />
+      <Link {...args} href="https://google.com" />
+      <Button size="lg" onClick={() => console.log("button!")}>
+        Button
+      </Button>
     </div>
   ),
   args: {
@@ -47,7 +52,7 @@ export const Sizes: Story = {
 export const Variants: Story = {
   render: (args) => (
     <div className="flex items-start gap-3">
-      <Link variant="primary" {...args} />
+      <Link variant="secondary" {...args} />
       <Link {...args} />
     </div>
   ),

@@ -17,17 +17,10 @@ export const metadata = {
 
 const themeInline = `
 const LOCAL_KEY = "gf-theme";
-const COLOR_SCHEME_QUERY = "(prefers-color-scheme: light)";
-const Themes = {
-  light: 'light',
-  dark: 'dark',
-}
-const prefersLight = window.matchMedia(COLOR_SCHEME_QUERY).matches;
 const initialTheme = () => {
   const getLocalStorage = (window.localStorage.getItem(LOCAL_KEY)) || "";
   if (getLocalStorage) return getLocalStorage;
-  if (prefersLight) return Themes.light;
-  return Themes.dark;
+  return 'dark';
 };
 document.body.classList.add(initialTheme());
 `;

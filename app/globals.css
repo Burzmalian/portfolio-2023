@@ -3,50 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --color-bg-dark-1: #404258;
-    --color-bg-dark-2: #474e68;
-    --color-bg-dark-3: #50577a;
-    --color-bg-light-1: #fefcf3;
-    --color-bg-light-2: #f5ebe0;
-    --color-bg-light-3: #f0dbdb;
-    --color-border-dark-1: #6b728e;
-    --color-border-light-1: #dba39a;
-    --color-text-dark-1: #ffffff;
-    --color-text-light-1: #222222;
-  }
-
-  .light {
-    --bg-1: var(--color-bg-light-1);
-    --bg-2: var(--color-bg-light-2);
-    --bg-3: var(--color-bg-light-3);
-    --border-1: var(--color-border-light-1);
-    --text-1: var(--color-text-light-1);
-  }
-
-  .dark {
-    --bg-1: var(--color-bg-dark-1);
-    --bg-2: var(--color-bg-dark-2);
-    --bg-3: var(--color-bg-dark-3);
-    --border-1: var(--color-border-dark-1);
-    --text-1: var(--color-text-dark-1);
-  }
-
-  html .light,
-  html .dark {
-    color: var(--text-1);
-  }
-
   html,
   body {
+    @apply text-g-theme-50;
     font-family: var(--font-inter);
     font-weight: 400;
     height: 100%;
-  }
-}
-
-@layer utilities {
-  .bg-1 {
-    @apply bg-bg-1;
   }
 }

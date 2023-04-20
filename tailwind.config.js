@@ -9,10 +9,20 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "bg-1": "var(--bg-1)",
-        "bg-2": "var(--bg-2)",
-        "bg-3": "var(--bg-3)",
-        "border-1": "var(--border-1)",
+        "g-theme": {
+          DEFAULT: "#414C79",
+          50: "#D9DCEA",
+          100: "#CBD0E3",
+          200: "#B1B8D5",
+          300: "#96A0C7",
+          400: "#7C88B9",
+          500: "#6170AA",
+          600: "#4F5D94",
+          700: "#414C79",
+          800: "#2D3555",
+          900: "#1A1E30",
+          950: "#10131E",
+        },
       },
       fontFamily: {
         sans: ["var(--font-inter)"],
@@ -21,17 +31,3 @@ module.exports = {
   },
   plugins: [],
 };
-
-// colors using custom properties for auto theme switching
-// colors that are non switchable
-
-// transparencys (hovers focused)
-// text
-// highlights
-// error colors?
-// borders
-// shadows
-// gradients
-
-// dark backgrounds 404258, 474E68, 50577A
-// dark border 6B728E

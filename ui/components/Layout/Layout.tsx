@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 import cx from "classnames";
 
 const Layout = ({ children }: { children: ReactNode }) => (
-  <div className="flex h-full w-full flex-col">{children}</div>
+  <div className="flex h-full w-full flex-col bg-g-theme-950">{children}</div>
 );
 
 const LayoutContainer = ({ children }: { children: ReactNode }) => (

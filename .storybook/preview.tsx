@@ -1,6 +1,6 @@
 import React from "react";
 import { Preview } from "@storybook/react";
-import { ThemeProvider } from "../ui/components";
+import { ThemeProvider, Layout } from "../ui/components";
 import "../app/globals.css";
 
 const preview: Preview = {
@@ -12,11 +12,14 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    layout: "fullscreen",
   },
   decorators: [
     (Story) => (
       <ThemeProvider>
-        <Story />
+        <Layout>
+          <Story />
+        </Layout>
       </ThemeProvider>
     ),
   ],

@@ -17,7 +17,7 @@ const config: StorybookConfig = {
   },
   previewHead: (head) => `
     ${head}
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <style>
       #storybook-root {
         height: 100%;

@@ -2,7 +2,13 @@
 
 import cx from "classnames";
 
-import { baseClasses, sizeClasses, variantClasses } from "../actions.consts";
+import {
+  baseClasses,
+  iconClasses,
+  paddingClasses,
+  sizeClasses,
+  variantClasses,
+} from "../actions.consts";
 import { ActionSizes, ActionVariants, ButtonTypes } from "../actions.types";
 import { forwardRef } from "react";
 
@@ -12,8 +18,9 @@ const Button = forwardRef<HTMLButtonElement, ButtonTypes>(
       children,
       className,
       "data-testid": dataTestId,
-      variant = ActionVariants.secondary,
-      size = ActionSizes.lg,
+      iconOnly,
+      variant = ActionVariants.primary,
+      size = ActionSizes.md,
       type = "button",
       onClick,
       ...rest
@@ -29,6 +36,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonTypes>(
           baseClasses,
           variantClasses[variant],
           sizeClasses[size],
+          iconOnly ? iconClasses[size] : paddingClasses[size],
           className
         )}
         onClick={onClick}

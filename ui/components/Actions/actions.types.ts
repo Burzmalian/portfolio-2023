@@ -11,12 +11,22 @@ export enum ActionSizes {
   lg = "lg",
 }
 
-export type ActionSharedTypes = {
+type icon =
+  | {
+      iconOnly: true;
+      "aria-label": string;
+    }
+  | {
+      iconOnly?: false;
+    };
+
+type ActionSharedTypes = {
   children: ReactNode;
   "data-testid"?: string;
   variant?: `${ActionVariants}`;
   size?: `${ActionSizes}`;
-};
+  iconOnly?: boolean;
+} & icon;
 
 export type ButtonTypes = {
   type?: ButtonHTMLAttributes<HTMLButtonElement>["type"];

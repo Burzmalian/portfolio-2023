@@ -56,12 +56,12 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
   }, [changeTheme]);
 
   useSSRLayoutEffect(() => {
-    const prefersLight = window.matchMedia(COLOR_SCHEME_QUERY).matches;
+    // const prefersLight = window.matchMedia(COLOR_SCHEME_QUERY).matches;
     const initialTheme = () => {
       const getLocalStorage =
         (window.localStorage.getItem(LOCAL_KEY) as Themes) || "";
       if (getLocalStorage) return getLocalStorage;
-      if (prefersLight) return Themes.light;
+      // if (prefersLight) return Themes.light;
       return Themes.dark;
     };
 
@@ -77,7 +77,4 @@ export const ThemeProvider = ({ children }: { children: ReactNode }) => {
 
 export const useTheme = () => useContext(ThemeContext);
 
-// is it better to getServerSideProps, grab cookie, then add to body class directly with _document? (would need to change from localstorage to cookie set/get)
-// if so, then we wouldnt need to get cookie here in this file, since its client side, we can check body classlist for any of the theme classes?
-// add inline next/script beforeInteractive to _document for nextjs to getIntitial and set theme
-// add provider and switcher to storybook (try to use built in mode switch)
+// Fix initial SSR render (matchmedia is client side only)

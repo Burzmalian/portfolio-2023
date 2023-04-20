@@ -4,31 +4,28 @@ import Layout, { LayoutParts } from "./Layout";
 
 export default {
   component: Layout,
-  parameters: {
-    layout: "fullscreen",
-  },
 } as Meta<typeof Layout>;
 
 export const Default = () => (
   <Layout>
-    <Layout.Part className="bg-bg-2" type={LayoutParts.Header}>
+    <Layout.Part type={LayoutParts.Header}>
       <Layout.Container>Header</Layout.Container>
     </Layout.Part>
-    <Layout.Part className="bg-bg-3" type={LayoutParts.Middle}>
+    <Layout.Part type={LayoutParts.Middle}>
       <Layout.Container>
-        {/* <Layout.Part className="bg-bg-1" type={LayoutParts.Sidebar}>
+        {/* <Layout.Part type={LayoutParts.Sidebar}>
           Sidebar
         </Layout.Part> */}
         <Layout.Part className="border" type={LayoutParts.Main}>
           Main
         </Layout.Part>
-        {/* <Layout.Part className="bg-bg-1" type={LayoutParts.Sidebar}>
+        {/* <Layout.Part type={LayoutParts.Sidebar}>
           Sidebar
         </Layout.Part> */}
       </Layout.Container>
     </Layout.Part>
 
-    <Layout.Part className="bg-bg-2" type={LayoutParts.Footer}>
+    <Layout.Part type={LayoutParts.Footer}>
       <Layout.Container>Footer</Layout.Container>
     </Layout.Part>
   </Layout>

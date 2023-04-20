@@ -2,7 +2,13 @@ import cx from "classnames";
 import { forwardRef } from "react";
 import NextLink from "next/link";
 
-import { baseClasses, variantClasses, sizeClasses } from "../actions.consts";
+import {
+  baseClasses,
+  variantClasses,
+  sizeClasses,
+  iconClasses,
+  paddingClasses,
+} from "../actions.consts";
 import { ActionSizes, ActionVariants, LinkTypes } from "../actions.types";
 
 const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
@@ -12,8 +18,9 @@ const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
       className,
       children,
       "data-testid": dataTestId,
-      variant = ActionVariants.secondary,
-      size = ActionSizes.lg,
+      iconOnly,
+      variant = ActionVariants.primary,
+      size = ActionSizes.md,
       ...rest
     },
     ref
@@ -28,6 +35,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
         baseClasses,
         variantClasses[variant],
         sizeClasses[size],
+        iconOnly ? iconClasses[size] : paddingClasses[size],
         className
       ),
       ...{ ...rest },
@@ -41,3 +49,5 @@ const Link = forwardRef<HTMLAnchorElement, LinkTypes>(
 
 Link.displayName = "Link";
 export default Link;
+
+// Need to fix types for rel, target, etc
