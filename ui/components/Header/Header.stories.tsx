@@ -1,4 +1,3 @@
-// Header.stories.tsx
 import * as React from "react";
 import { Meta } from "@storybook/react";
 import { Header } from "./";

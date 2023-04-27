@@ -1,4 +1,4 @@
-import { Layout, LayoutParts, ThemeSwitch } from "..";
+import { Layout, LayoutParts, Link, ThemeSwitch } from "..";
 
 const Header = () => {
   return (
@@ -8,11 +8,18 @@ const Header = () => {
           <div className="text-3xl font-bold">Gyles Fohl</div>
           <nav className="border-bg-3 bg-bg-2 rounded-2xl border px-12 py-3">
             <ul className="flex gap-12 font-bold">
-              <li>Home</li>
-              <li>Blog</li>
-              <li>Work</li>
-              <li>About</li>
-              <li>Design system</li>
+              <li>
+                <Link href="/">Home</Link>
+              </li>
+              <li>
+                <Link href="/blog">Blog</Link>
+              </li>
+              <li>
+                <Link href="/work">Work</Link>
+              </li>
+              <li>
+                <Link href="/about">About</Link>
+              </li>
             </ul>
           </nav>
           <ThemeSwitch />

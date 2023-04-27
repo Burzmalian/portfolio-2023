@@ -4,10 +4,12 @@ import "./globals.css";
 import { Header, Layout, LayoutParts, ThemeProvider } from "@/ui/components";
 import { Inter } from "next/font/google";
 
+import "@code-hike/mdx/dist/index.css";
+
 const inter = Inter({
-  variable: "--font-inter",
   display: "swap",
   subsets: ["latin"],
+  variable: "--font-inter",
 });
 
 export const metadata = {
@@ -32,7 +34,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} dark`}>
+      <body className={`${inter.variable} dark font-sans`}>
         <Script
           id="theme"
           strategy="beforeInteractive"
@@ -41,14 +43,14 @@ export default function RootLayout({
         <ThemeProvider>
           <Layout>
             <Header />
-            <Layout.Part className="bg-bg-3" type={LayoutParts.Middle}>
+            <Layout.Part type={LayoutParts.Middle}>
               <Layout.Container>
                 <Layout.Part className="" type={LayoutParts.Main}>
                   {children}
                 </Layout.Part>
               </Layout.Container>
             </Layout.Part>
-            <Layout.Part className="bg-bg-2" type={LayoutParts.Footer}>
+            <Layout.Part type={LayoutParts.Footer}>
               <Layout.Container>Footer</Layout.Container>
             </Layout.Part>
           </Layout>

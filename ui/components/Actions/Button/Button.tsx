@@ -50,5 +50,3 @@ const Button = forwardRef<HTMLButtonElement, ButtonTypes>(
 
 Button.displayName = "Button";
 export default Button;
-
-// fill out stories
