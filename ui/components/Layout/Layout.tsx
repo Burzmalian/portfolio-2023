@@ -7,9 +7,7 @@ const Layout = ({ children }: { children: ReactNode }) => (
 );
 
 const LayoutContainer = ({ children }: { children: ReactNode }) => (
-  <div className="mx-auto flex w-full max-w-screen-2xl flex-col px-[2vw] md:h-full md:flex-row">
-    {children}
-  </div>
+  <div className="mx-auto w-full max-w-screen-2xl px-[2vw]">{children}</div>
 );
 
 export enum LayoutParts {
@@ -37,7 +35,7 @@ const LayoutPart = ({ as, children, type, className }: LayoutPartProps) => {
     },
     [Main]: {
       element: "main",
-      classes: "grow flex",
+      classes: "grow flex flex-col w-full h-full",
     },
     [Footer]: {
       element: "footer",

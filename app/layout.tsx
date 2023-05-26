@@ -43,13 +43,16 @@ export default function RootLayout({
         <ThemeProvider>
           <Layout>
             <Header />
+
             <Layout.Part type={LayoutParts.Middle}>
-              <Layout.Container>
-                <Layout.Part className="" type={LayoutParts.Main}>
-                  {children}
-                </Layout.Part>
-              </Layout.Container>
+              <Layout.Part
+                className="border border-red-800"
+                type={LayoutParts.Main}
+              >
+                {children}
+              </Layout.Part>
             </Layout.Part>
+
             <Layout.Part type={LayoutParts.Footer}>
               <Layout.Container>Footer</Layout.Container>
             </Layout.Part>
